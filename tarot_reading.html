@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>快速塔羅占卜</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
+        button { padding: 10px 20px; font-size: 16px; }
+        #result img { width: 200px; margin-top: 20px; }
+        #meaning { margin-top: 10px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>快速塔羅占卜</h1>
+    <button onclick="drawCard()">🔮 點擊抽牌</button>
+    <div id="result"></div>
+    <div id="meaning"></div>
+
+    <script>
+        const cards = [
+            {"name": "愚者", "meaning": "新的開始，冒險與未知。", "img": "https://i.imgur.com/GVbBlJQ.jpg"},
+            {"name": "魔術師", "meaning": "行動力與創造力。", "img": "https://i.imgur.com/7fU1KXt.jpg"},
+            {"name": "女祭司", "meaning": "直覺與潛意識的力量。", "img": "https://i.imgur.com/JuABe6Y.jpg"},
+            {"name": "皇后", "meaning": "豐盛、滋養與愛。", "img": "https://i.imgur.com/Fz6LxRA.jpg"},
+            {"name": "皇帝", "meaning": "權威、結構與控制。", "img": "https://i.imgur.com/ZRGryIP.jpg"},
+            {"name": "教皇", "meaning": "智慧與精神指導。", "img": "https://i.imgur.com/THLRv4S.jpg"},
+            {"name": "戀人", "meaning": "愛情、選擇與結合。", "img": "https://i.imgur.com/rMj9WJk.jpg"},
+            {"name": "戰車", "meaning": "勝利、控制與前進。", "img": "https://i.imgur.com/rwBQyAg.jpg"},
+            {"name": "力量", "meaning": "內在力量、勇氣。", "img": "https://i.imgur.com/e2qTNsB.jpg"},
+            {"name": "隱士", "meaning": "內省、尋找智慧。", "img": "https://i.imgur.com/5Ag5uAx.jpg"},
+            {"name": "命運之輪", "meaning": "變化與循環。", "img": "https://i.imgur.com/ZGGkMka.jpg"},
+            {"name": "正義", "meaning": "公平、公正與真理。", "img": "https://i.imgur.com/35G3pCz.jpg"},
+            {"name": "吊人", "meaning": "犧牲與觀點轉換。", "img": "https://i.imgur.com/dQqRC2S.jpg"},
+            {"name": "死神", "meaning": "結束與新生。", "img": "https://i.imgur.com/dh6K4Yy.jpg"},
+            {"name": "節制", "meaning": "平衡與和諧。", "img": "https://i.imgur.com/oy3t9HS.jpg"},
+            {"name": "惡魔", "meaning": "束縛與誘惑。", "img": "https://i.imgur.com/OAeP8IP.jpg"},
+            {"name": "高塔", "meaning": "劇變與重建。", "img": "https://i.imgur.com/fB5oSUv.jpg"},
+            {"name": "星星", "meaning": "希望與療癒。", "img": "https://i.imgur.com/jvmbBKV.jpg"},
+            {"name": "月亮", "meaning": "幻想與直覺。", "img": "https://i.imgur.com/Z3oApmW.jpg"},
+            {"name": "太陽", "meaning": "快樂與成功。", "img": "https://i.imgur.com/sT2E8WO.jpg"},
+            {"name": "審判", "meaning": "覺醒與重生。", "img": "https://i.imgur.com/6wGx42T.jpg"},
+            {"name": "世界", "meaning": "完成與整合。", "img": "https://i.imgur.com/xHEN4Ry.jpg"}
+        ];
+
+        function drawCard(){
+            const card = cards[Math.floor(Math.random() * cards.length)];
+            document.getElementById("result").innerHTML = `<img src="${card.img}" alt="${card.name}"><br><strong>${card.name}</strong>`;
+            document.getElementById("meaning").innerText = card.meaning;
+        }
+    </script>
+</body>
+</html>
